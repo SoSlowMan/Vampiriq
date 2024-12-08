@@ -32,14 +32,11 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         if (doneSpawning == false)
         {
-            Debug.Log("иф работает");
             for (int i = 0; i <= enemyCount; i++)
             {
-                Debug.Log("фор работает");
-                EnemyController newEnemy = Instantiate(enemy, spawner.position, spawner.rotation) as EnemyController;
+                EnemyController newEnemy = Instantiate(enemy, spawner.position, spawner.rotation);
                 if (i == enemyCount)
                 {
-                    Debug.Log("иф2 работает");
                     doneSpawning = true;
                 }
             }
