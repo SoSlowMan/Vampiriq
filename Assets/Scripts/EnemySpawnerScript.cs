@@ -22,13 +22,25 @@ public class EnemySpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyCount = Random.Range(1, 7);
-        enemyKilled = 0;
-        doneSpawning = false;
+        Init();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        EnemySpawner();
+        EnemyCounter();
+    }
+
+    void EnemyCounter()
+    {
+        if (enemyKilled == enemyCount + 1)
+        {
+            portal.SetActive(true);
+        }
+    }
+
+    void EnemySpawner()
     {
         if (doneSpawning == false)
         {
@@ -41,10 +53,17 @@ public class EnemySpawnerScript : MonoBehaviour
                 }
             }
         }
+    }
 
-        if (enemyKilled == enemyCount+1)
-        {
-            portal.SetActive(true);
-        }
+    void Init()
+    {
+        enemyCount = Random.Range(1, 7);
+        enemyKilled = 0;
+        doneSpawning = false;
+    }
+
+    public void KillIncrement()
+    {
+        enemyKilled++;
     }
 }

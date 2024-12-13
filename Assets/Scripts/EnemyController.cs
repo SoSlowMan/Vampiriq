@@ -32,16 +32,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((isPlayer2On.player2IsHere == true) && choosePlayer == 1)
-        {
-            thePlayer2 = FindObjectOfType<Player2DummyScript>();
-            transform.LookAt(thePlayer2.transform.position);
-        }
-        else
-        {
-            //choosePlayer = 0;
-            transform.LookAt(thePlayer.transform.position);
-        }
+        transform.LookAt(thePlayer.transform.position);
 
         if (currentHealth <= 0)
         {

@@ -29,7 +29,8 @@ public class GunController : MonoBehaviour
             if (shotCounter < timeBetweenShots)
             {
                 shotCounter = 2 * timeBetweenShots;
-                BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as BulletController;
+                BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                newBullet.Coloring();
                 newBullet.speed = bulletSpeed;
             }
         }
