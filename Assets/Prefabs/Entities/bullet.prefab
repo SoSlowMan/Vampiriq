@@ -105,7 +105,7 @@ MonoBehaviour:
   speed: 5
   bulletDamage: 1
   bulletColor: 0
-  bulletRenderer: {fileID: 0}
+  bulletRenderer: {fileID: 3636017551048226630}
   materials: []
 --- !u!114 &-8910389046806388594
 MonoBehaviour:
